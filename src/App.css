@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Open+Sans:wght@300;600&display=swap");
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  /* height: 40vmin; */
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,23 +19,51 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url("/public/rpg_toad_2.png");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #fff;
+  text-decoration: none;
 }
-
-@keyframes App-logo-spin {
+.content-container {
+  left: 300px;
+  top: 600px;
+  position: absolute;
+}
+.content {
+  width: 510px;
+  text-align: left;
+  font-size: 40px;
+  font-family: "Exo 2",sans-serif !important;
+}
+.cta-container {
+  margin-top: 20px;
+  height: 60px;
+  width: 450px;
+  background-color: #BF1304;
+  padding: 5px 30px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
