@@ -1,9 +1,7 @@
 import "../../App.css";
-import Content from "./Content";
-import Cta from "./Cta";
 import {useEffect, useState} from "react";
 
-function Hero() {
+function Hero({alignment, mode, readability, image, video, options, height}) {
 
     const [show, setShow] = useState(false)
     const [hover, setHover] = useState(false);
@@ -12,44 +10,7 @@ function Hero() {
 
     useEffect(()=> { setShow(true) }, [])
 
-    const options = {
-        mode: 'dark',
-        media: {
-            image: {
-                url: '/rpg_toad.png'
-            },
-            video: {
-                url: ''
-            }
-        },
-        content: {
-            alignment: 'leftCenter',
-            maxWidth: '600px',
-            containerMaxWidth: '1680px',
-            padding: '20x',
-            title: {
-                text: 'Welcome to the highest level frog forest',
-                color: '#ffffff',
-                size: '40px'
-            },
-            subtitle: {
-                text: 'Start your journey today',
-                color: '#ffffff',
-                size: '29px'
-            },
-        },
-        button: {
-            target: '_blank',
-            href: 'https://github.com/',
-            label: 'Join now',
-            bgColor: '#000000',
-            color: '#ffffff',
-        },
-        height: "100vh",
-        readability: 0.2,
-    }
-
-    const heroClassname = `hero ${show ? 'hero--show' : ''} ${options.mode === 'dark' ? 'hero--dark' : 'hero--light'}`
+    const heroClassname = `hero ${show ? 'hero--show' : ''} ${mode === 'dark' ? 'hero--dark' : 'hero--light'}`
 
     const styles = {
         button: {
@@ -59,26 +20,25 @@ function Hero() {
     }
 
   return (
-    // <div className="App">
-    //   <div className="App-header">
-    //     <div className="content-container">
-    //       <Content content="Bem vindo a floresta dos sapos de nivel mais alto" />
-    //       <Cta label="Learn React" url="https://reactjs.org" />
-    //     </div>
-    //   </div>
-    // </div>
-      <div className={heroClassname} style={{height: options.height}}>
-          <div className={`hero-container hero-alignment--${options.content.alignment}`}>
-              {options.readability > 0 ? (
-                  <span className="hero-container-readability" style={{opacity: options.readability}} />
+      <div className={heroClassname} style={{height: height}}>
+          <div className={`hero-container hero-alignment--${alignment}`}>
+              {readability > 0 ? (
+                  <span className="hero-container-readability" style={{opacity: readability}} />
                   ) : null}
               <div className="hero-media">
-                  <div className="hero-content_image" style={{
-                      backgroundImage: `url(${options.media.image.url})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center center",
-                  }}/>
-                  {/* video */}
+                  { video ? (
+                      <video width="100%" height="auto" autoPlay muted loop>
+                          <source src={video} type="video/mp4" />
+                      </video>
+                  ) : (
+                      <div className="hero-content_image" style={{
+                          backgroundImage: `url(${image})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center center",
+                      }}/>
+                  )}
+
+
               </div>
               <div className="hero-content" style={{
                   maxWidth: options.content.containerMaxWidth,
@@ -87,10 +47,10 @@ function Hero() {
                       padding: options.content.padding,
                       maxWidth: options.content.maxWidth
                   }}>
-                      <h2 className="hero-content_title">
+                      <h2 className="hero-content_title" style={{fontSize: options.content.title.size}}>
                           {options.content.title.text}
                       </h2>
-                      <h3 className="hero-content_subtitle">
+                      <h3 className="hero-content_subtitle" style={{fontSize: options.content.subtitle.size}}>
                           {options.content.subtitle.text}
                       </h3>
                       <div className="hero-content_cta">

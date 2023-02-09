@@ -45,7 +45,7 @@
   width: 510px;
   text-align: left;
   font-size: 40px;
-  font-family: "Exo 2",sans-serif !important;
+  font-family: "Exo 2", sans-serif !important;
 }
 .cta-container {
   margin-top: 20px;
@@ -268,36 +268,36 @@
   text-align: right;
 }
 
-.hero-alignment--topLeft {
+.hero-alignment--leftTop {
   align-items: flex-start;
 }
-.hero-alignment--topLeft .hero-content {
+.hero-alignment--leftTop .hero-content {
   justify-content: flex-start;
 }
-.hero-alignment--topLeft .hero-block {
+.hero-alignment--leftTop .hero-block {
   text-align: left;
   display: flex;
   justify-content: flex-start;
 }
-.hero-alignment--topLeft .hero-content_title,
-.hero-alignment--topLeft .hero-content_subtitle,
-.hero-alignment--topLeft .hero-content_cta {
+.hero-alignment--leftTop .hero-content_title,
+.hero-alignment--leftTop .hero-content_subtitle,
+.hero-alignment--leftTop .hero-content_cta {
   text-align: left;
 }
 
-.hero-alignment--bottomLeft {
+.hero-alignment--leftBottom {
   align-items: flex-end;
 }
-.hero-alignment--bottomLeft .hero-content {
+.hero-alignment--leftBottom .hero-content {
   justify-content: flex-start;
 }
-.hero-alignment--bottomLeft .hero-block {
+.hero-alignment--leftBottom .hero-block {
   text-align: left;
   display: flex;
   justify-content: flex-end;
 }
-.hero-alignment--bottomLeft .hero-content_title,
-.hero-alignment--bottomLeft .hero-content_subtitle,
-.hero-alignment--bottomLeft .hero-content_cta {
+.hero-alignment--leftBottom .hero-content_title,
+.hero-alignment--leftBottom .hero-content_subtitle,
+.hero-alignment--leftBottom .hero-content_cta {
   text-align: left;
 }
