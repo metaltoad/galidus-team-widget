@@ -71,6 +71,7 @@
 /*.hero .hero-media,*/
 .hero {
   background: #fff;
+  width: 100%;
 }
 .hero--dark {
   background: #111111;

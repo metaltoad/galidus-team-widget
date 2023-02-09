@@ -1,7 +1,7 @@
 
 import "./App.css";
 import Hero from "./components/Hero/Hero";
-
+import Carousel from "./components/Carousel"
 const options = {
   mode: 'dark',
   alignment: 'leftCenter',
@@ -41,15 +41,33 @@ const options = {
 }
 
 function App() {
-  return <Hero
-      height={'100vh'}
-      image={'/rpg_toad.png'}
-      video={'/tech.mp4'}
-      readability={0}
-      alignment='leftCenter'
-      mode='dark'
-      options={options}
-  />;
+  // return <Hero
+  //     height={'100vh'}
+  //     image={'/rpg_toad.png'}
+  //     video={'/tech.mp4'}
+  //     readability={0}
+  //     alignment='leftCenter'
+  //     mode='dark'
+  //     options={options}
+  // />;
+  return <Carousel>
+          <Hero height={'100vh'}
+              image={'/rpg_toad.png'}
+              video={'/tech.mp4'}
+              readability={0}
+              alignment='leftCenter'
+              mode='dark'
+              options={options}
+          />
+          <Hero height={'100vh'}
+                image={'/rpg_toad.png'}
+                video={'/tech.mp4'}
+                readability={0}
+                alignment='leftCenter'
+                mode='dark'
+                options={options}
+          />
+        </Carousel>
 }
 
 export default App;
