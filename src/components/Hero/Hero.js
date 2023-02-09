@@ -7,6 +7,7 @@ function Hero({alignment, mode, readability, image, video, options, height}) {
     const [hover, setHover] = useState(false);
     const handleMouseEnter = () => setHover(true);
     const handleMouseLeave = () => setHover(false);
+
     useEffect(()=> { setShow(true) }, [])
 
     const heroClassname = `hero ${show ? 'hero--show' : ''} ${mode === 'dark' ? 'hero--dark' : 'hero--light'}`
