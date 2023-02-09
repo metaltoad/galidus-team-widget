@@ -1,4 +1,19 @@
 @import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Open+Sans:wght@300;600&display=swap);
+.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.carousel-item {
+    height: 100%;
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s cubic-bezier(0.39,0.575,0.565,1);
+}
+
 .App {
   text-align: center;
 }
@@ -72,6 +87,7 @@
 /*.hero .hero-media,*/
 .hero {
   background: #fff;
+  width: 100%;
 }
 .hero--dark {
   background: #111111;
@@ -308,4 +324,4 @@
 }
 
 
-/*# sourceMappingURL=main.b60a4100.css.map*/
+/*# sourceMappingURL=main.43b4ea91.css.map*/
