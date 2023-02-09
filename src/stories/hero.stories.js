@@ -146,6 +146,12 @@ MetalToad.args = {
             image: {
                 url: 'https://www.metaltoad.com/sites/default/files/inline-images/pacific%20northwest%20background.png'
             },
+             image: {
+                url: 'https://raw.githubusercontent.com/metaltoad/galidus-team-widget/c90db3e26997d02dd832e9e25b6083172559ec21/docs/assets/images/cover-linkedin%20(1).png'
+            },
+             image: {
+                url: 'https://raw.githubusercontent.com/metaltoad/galidus-team-widget/c90db3e26997d02dd832e9e25b6083172559ec21/docs/assets/images/fundo_metaltoad.jpg'
+            },
             video: {
                 url: ''
             }
