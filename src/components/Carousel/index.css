@@ -1,9 +1,12 @@
-.carousel-container {
+.tui_carousel {
+    position: relative;
+}
+.tui_carousel-container {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
 }
-.carousel-item {
+.tui_carousel-item {
     height: 100%;
     min-width: 100%;
     width: 100%;
@@ -11,4 +14,28 @@
     align-items: center;
     justify-content: center;
     transition: 1s cubic-bezier(0.39,0.575,0.565,1);
+}
+.tui_carousel-controls button {
+    position: absolute;
+    top: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: -14px;
+}
+.tui_carousel-controls button:hover {
+    opacity: 0.8;
+}
+.tui_carousel-arrow {
+    width: 28px;
+    height: 28px;
+}
+.tui_carousel-prev {
+    left: 5px;
+}
+.tui_carousel-next {
+    right: 5px;
+}
+.tui_carousel-next .tui_carousel-arrow {
+    transform: rotate(180deg);
 }

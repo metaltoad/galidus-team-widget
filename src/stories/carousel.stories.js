@@ -7,6 +7,17 @@ export default {
     component: Carousel,
     title: 'Carousel',
     argTypes: {
+        autoplay: {
+            name: 'autoplay',
+            control: { type: 'select' },
+            options: [true, false],
+            type: { name: 'string', required: true },
+            defaultValue: true,
+            table: {
+                defaultValue: { summary: true },
+            },
+            description: 'Autoplay carousel with defined timeout',
+        },
         timeout: {
             control: {type: 'text'},
             type: {name: 'number', required: false},
@@ -16,99 +27,115 @@ export default {
             },
             description: 'Timeout slider',
         },
+        showNav: {
+            name: 'showNav',
+            control: { type: 'select' },
+            options: [true, false],
+            type: { name: 'string', required: true },
+            defaultValue: true,
+            table: {
+                defaultValue: { summary: true },
+            },
+            description: 'Select theme mode',
+        },
+        buttonColor: {
+            name: 'buttonColor',
+            control: { type: 'color' },
+            defaultValue: '#ffffff',
+            type: { name: 'string', required: true },
+            description: 'buttonColor',
+        },
     }
 };
 
-const options = {
-    mode: 'dark',
-    media: {
-        image: {
-            url: '/rpg_toad.png'
-        },
-        video: {
-            url: ''
-        }
-    },
-    content: {
-        alignment: 'leftCenter',
-        maxWidth: '600px',
-        containerMaxWidth: '1680px',
-        padding: '40px',
-        title: {
-            text: 'What is RPGMatch™?',
-            color: '#ffffff',
-            size: '40px'
-        },
-        subtitle: {
-            text: 'Tinder for tabletop roleplaying games (without the romance but with way more dice)',
-            color: '#ffffff',
-            size: '24px'
-        },
-    },
-    button: {
-        target: '_blank',
-        href: 'https://rpgmatch.org/',
-        label: 'Sign Up For Free',
-        bgColor: '#A61F38',
-        color: '#ffffff',
-    },
-    height: '100%',
-    readability: 0.2,
-}
 
 const Template = args => <Carousel {...args}>
-    <Hero
-        alignment="center"
-        height="500px"
-        image="/rpg_toad.png"
-        mode="dark"
-        options={{
-            button: {
-                bgColor: '#F15F22',
-                color: '#ffffff',
-                href: 'https://github.com/',
-                label: 'JOIN US',
-                target: '_blank'
-            },
-            content: {
-                alignment: 'center',
-                containerMaxWidth: '1680px',
-                maxWidth: '700px',
-                padding: '40px',
-                subtitle: {
-                    color: '#ffffff',
-                    size: '30px',
-                    text: 'Machine learning is going to affect every industry from legal, to streaming, to retail.'
-                },
-                title: {
-                    color: '#ffffff',
-                    size: '48px',
-                    text: 'AWS Machine Learning'
-                }
-            },
-            height: '100vh',
-            media: {
-                image: {
-                    url: 'https://www.metaltoad.com/sites/default/files/inline-images/pacific%20northwest%20background.png'
-                },
-                video: {
-                    url: ''
-                }
-            },
-            mode: 'dark',
-            readability: 0.2
-        }}
-        readability={0.3}
-        video="/tech.mp4"
-    />
-    <Hero height={'500px'}
-          image={'/rpg_toad.png'}
-          readability={0}
-          alignment='leftCenter'
-          mode='dark'
-          options={options}
-    />
+    <div style={{
+        height: '400px',
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        justifyContent: 'center',
+        backgroundColor: '#ccc'
+    }}>
+        <img src="https://i.ibb.co/9rKGZV5/toad-ui-react-components.png" alt=""/>
+    </div>
+    <div style={{
+        height: '400px',
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
+        justifyContent: 'center',
+        backgroundColor: '#e4e4e4',
+        flexDirection: 'column'
+    }}>
+        <h2 style={{textAlign: 'center'}}>Metal Toad Hackaton - Team Galidus</h2>
+        <ul style={{textAlign: 'left'}}>
+            <li><a href="https://metaltoad.github.io/galidus-team-widget" style={{color: '#000'}}>UI Storybook</a></li>
+            <li><a href="https://github.com/metaltoad/galidus-team-widget/" style={{color: '#000'}}>Github Repo - Galidus Team Widget</a></li>
+        </ul>
+    </div>
 </Carousel>;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    timeout: 5000,
+    showNav: true,
+    buttonColor: '#000000',
+    autoplay: true,
+};
+
+const TemplateVideoAndImage = args => <Carousel {...args}>
+    <Hero
+        alignment="center"
+        buttonBgColor="#F15F22"
+        buttonColor="#fff"
+        buttonHref="https://metaltoad.com"
+        buttonLabel="Start your cloud journey"
+        buttonTarget="_blank"
+        containerMaxWidth="1680px"
+        contentMaxWidth="1000px"
+        contentPadding="80px"
+        height="500px"
+        image={null}
+        mode="dark"
+        readability={0.8}
+        subtitle="Metal Toad is a leading AWS Consulting Partner focused on supporting customers in the Pacific Northwest. Our team includes experts certified in AWS machine learning, application development, architecture, migration, and DevOps — backed by 24x7 support. AWS cloud is powerful, we make it easy."
+        subtitleColor="#fff"
+        subtitleSize="19px"
+        title="#1 in the Pacific Northwest for AWS Machine Learning"
+        titleColor="#fff"
+        titleSize="40px"
+        video="https://designsupply-web.com/samplecontent/vender/codepen/20181014.mp4"
+    />
+    <Hero
+        alignment="leftCenter"
+        buttonBgColor="#A61F38"
+        buttonColor="#fff"
+        buttonHref="https://metaltoad.com"
+        buttonLabel="Sign Up For Free"
+        buttonTarget="_blank"
+        containerMaxWidth="1680px"
+        contentMaxWidth="700px"
+        contentPadding="80px"
+        height="500px"
+        image="https://i.ibb.co/rtqQNPJ/rpg-toad-4.jpg"
+        mode="dark"
+        readability={0.7}
+        subtitle="RPGMatch is an application where you can register and meet other TTRPG players who like to play like you do. Think: Tinder for tabletop roleplaying games (without the romance but with way more dice)."
+        subtitleColor="#fff"
+        subtitleSize="22px"
+        title="What is RPGMatch™?"
+        titleColor="#fff"
+        titleSize="40px"
+        video={null}
+    />
+</Carousel>;
+
+export const VideoAndImage = TemplateVideoAndImage.bind({});
+VideoAndImage.args = {
+    timeout: 7000,
+    showNav: true,
+    buttonColor: '#ffffff',
+    autoplay: true,
+};

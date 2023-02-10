@@ -1,7 +1,28 @@
 import "../../App.css";
 import {useEffect, useState} from "react";
 
-function Hero({alignment, mode, readability, image, video, options, height}) {
+function Hero({
+  alignment = 'center',
+  mode = 'dark',
+  readability = '0',
+  image,
+  video,
+  height = '100vh',
+  contentMaxWidth = '600px',
+  containerMaxWidth = 'true',
+  contentPadding = '80px',
+  title = 'TUI HERO',
+  titleColor = '#fff',
+  titleSize= '40px',
+  subtitle = 'React Component',
+  subtitleColor = '#fff',
+  subtitleSize = '28px',
+  buttonTarget,
+  buttonHref,
+  buttonLabel,
+  buttonBgColor,
+  buttonColor
+}) {
 
     const [show, setShow] = useState(false)
     const [hover, setHover] = useState(false);
@@ -14,8 +35,23 @@ function Hero({alignment, mode, readability, image, video, options, height}) {
 
     const styles = {
         button: {
-            backgroundColor: hover ? options.button.color : options.button.bgColor,
-            color: hover ? options.button.bgColor : options.button.color,
+            backgroundColor: hover ? buttonColor : buttonBgColor,
+            color: hover ? buttonBgColor : buttonColor,
+        }
+    }
+
+    const renderMedia = () => {
+        if (video !== null && video !== '') {
+            return <div className="hero-media">
+                <video width="100%" height="auto" poster={image} autoPlay muted loop>
+                <source src={video} type="video/mp4" />
+            </video></div>
+        } else if (image) {
+            return <div className="hero-media"><div className="hero-content_image" style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+            }}/></div>
         }
     }
 
@@ -25,45 +61,39 @@ function Hero({alignment, mode, readability, image, video, options, height}) {
               {readability > 0 ? (
                   <span className="hero-container-readability" style={{opacity: readability}} />
                   ) : null}
-              <div className="hero-media">
-                  { video ? (
-                      <video width="100%" height="auto" autoPlay muted loop>
-                          <source src={video} type="video/mp4" />
-                      </video>
-                  ) : (
-                      <div className="hero-content_image" style={{
-                          backgroundImage: `url(${image})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center center",
-                      }}/>
-                  )}
-
-
-              </div>
+              {renderMedia()}
               <div className="hero-content" style={{
-                  maxWidth: options.content.containerMaxWidth,
+                  maxWidth: containerMaxWidth,
               }}>
                   <div className="hero-content-block" style={{
-                      padding: options.content.padding,
-                      maxWidth: options.content.maxWidth
+                      padding: contentPadding,
+                      maxWidth: contentMaxWidth
                   }}>
-                      <h2 className="hero-content_title" style={{fontSize: options.content.title.size}}>
-                          {options.content.title.text}
-                      </h2>
-                      <h3 className="hero-content_subtitle" style={{fontSize: options.content.subtitle.size}}>
-                          {options.content.subtitle.text}
-                      </h3>
-                      <div className="hero-content_cta">
-                          <a className="hero-content_link"
-                             target={options.button.target}
-                             href={options.button.href}
-                             style={styles.button}
-                             onMouseEnter={handleMouseEnter}
-                             onMouseLeave={handleMouseLeave}
-                          >
-                              {options.button.label}
-                          </a>
-                      </div>
+                      {title ? (
+                          <h2 className="hero-content_title" style={{fontSize: titleSize, color: titleColor}}>
+                              {title}
+                          </h2>
+                      ):null}
+
+                      {subtitle ? (
+                          <h3 className="hero-content_subtitle" style={{fontSize: subtitleSize, color: subtitleColor}}>
+                              {subtitle}
+                          </h3>
+                      ):null}
+
+                      {buttonLabel ? (
+                          <div className="hero-content_cta">
+                              <a className="hero-content_link"
+                                 target={buttonTarget}
+                                 href={buttonHref}
+                                 style={styles.button}
+                                 onMouseEnter={handleMouseEnter}
+                                 onMouseLeave={handleMouseLeave}
+                              >
+                                  {buttonLabel}
+                              </a>
+                          </div>
+                      ):null}
 
                   </div>
               </div>

@@ -21,6 +21,9 @@ h2#stories {
 h3.sbdocs-h3 {
     color:#fff !important;
 }
+#docs-root * {
+    font-family: sans-serif !important
+}
 /*.sbdocs-preview {*/
 /*    border-color: #ed6033 !important;*/
 /*}*/
