@@ -1,10 +1,13 @@
-@import url(https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Open+Sans:wght@300;600&display=swap);
-.carousel-container {
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap);
+.tui_carousel {
+    position: relative;
+}
+.tui_carousel-container {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
 }
-.carousel-item {
+.tui_carousel-item {
     height: 100%;
     min-width: 100%;
     width: 100%;
@@ -13,78 +16,36 @@
     justify-content: center;
     transition: 1s cubic-bezier(0.39,0.575,0.565,1);
 }
-
-.App {
-  text-align: center;
+.tui_carousel-controls button {
+    position: absolute;
+    top: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: -14px;
 }
-
-.App-logo {
-  /* height: 40vmin; */
-  object-fit: cover;
-  width: 100%;
-  height: 400px;
+.tui_carousel-controls button:hover {
+    opacity: 0.8;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-  }
+.tui_carousel-arrow {
+    width: 28px;
+    height: 28px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-image: url(../../687669ba32fce64cb4f0.png);
-  background-size: cover;
-  background-position: top left;
-  background-repeat: no-repeat;
+.tui_carousel-prev {
+    left: 5px;
 }
-
-.App-link {
-  color: #fff;
-  text-decoration: none;
+.tui_carousel-next {
+    right: 5px;
 }
-.content-container {
-  left: 300px;
-  top: 600px;
-  position: absolute;
+.tui_carousel-next .tui_carousel-arrow {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
-.content {
-  width: 510px;
-  text-align: left;
-  font-size: 40px;
-  font-family: "Exo 2", sans-serif !important;
-}
-.cta-container {
-  margin-top: 20px;
-  height: 60px;
-  width: 450px;
-  background-color: #BF1304;
-  padding: 5px 30px;
-  border-radius: 8px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 /*.hero .hero-media,*/
+.hero * {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 .hero {
   background: #fff;
   width: 100%;
@@ -150,6 +111,7 @@
 }
 .hero-content_image {
   height: 100%;
+  background-size: cover;
 }
 
 .hero-content {
@@ -163,21 +125,17 @@
   margin: 0;
   font-size: 40px;
   transition-delay: 200ms !important;
-  color: #333333;
   font-weight: 600;
 }
 .hero--dark .hero-content_title {
-  color: #ffffff;
 }
 .hero-content_subtitle {
   margin: 0;
   font-size: 29px;
   transition-delay: 350ms !important;
-  color: #333333;
   font-weight: 400;
 }
 .hero--dark .hero-content_subtitle {
-  color: #ffffff;
 }
 .hero-content-block {
   display: flex;
@@ -324,4 +282,4 @@
 }
 
 
-/*# sourceMappingURL=main.43b4ea91.css.map*/
+/*# sourceMappingURL=main.a56816ac.css.map*/
