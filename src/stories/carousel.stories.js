@@ -69,7 +69,7 @@ const Template = args => <Carousel {...args}>
         backgroundColor: '#e4e4e4',
         flexDirection: 'column'
     }}>
-        <h2 style={{textAlign: 'center'}}>Metal Toad Hackathon - Team Galidus.</h2>
+        <h2 style={{textAlign: 'center'}}>Metal Toad Hackathon - Galidus Team.</h2>
         <ul style={{textAlign: 'left'}}>
             <li><a href="https://metaltoad.github.io/galidus-team-widget" style={{color: '#000'}}>UI Storybook</a></li>
             <li><a href="https://github.com/metaltoad/galidus-team-widget/" style={{color: '#000'}}>Github Repo - Galidus Team Widget</a></li>
