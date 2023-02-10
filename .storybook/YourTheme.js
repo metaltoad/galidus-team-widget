@@ -6,7 +6,7 @@ export default create({
     base: 'dark',
     brandTitle: 'UI-TOAD',
     brandUrl: 'https://metaltoad.com',
-    brandImage: '/logo.png',
+    brandImage: 'https://i.ibb.co/Bj0YYCW/logo.png',
     brandTarget: '_self',
     colorSecondary: '#ed6033', // Chateau Green
 });
