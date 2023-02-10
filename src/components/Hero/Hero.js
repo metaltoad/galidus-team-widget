@@ -16,7 +16,7 @@ function Hero({
   titleSize= '40px',
   subtitle = 'React Component',
   subtitleColor = '#fff',
-  subtitleSize = '28px',
+  subtitleSize = '27px',
   buttonTarget,
   buttonHref,
   buttonLabel,
