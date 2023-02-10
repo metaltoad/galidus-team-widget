@@ -69,7 +69,7 @@ const Template = args => <Carousel {...args}>
         backgroundColor: '#e4e4e4',
         flexDirection: 'column'
     }}>
-        <h2 style={{textAlign: 'center'}}>Metal Toad Hackaton - Team Galidus</h2>
+        <h2 style={{textAlign: 'center'}}>Metal Toad Hackathon - Team Galidus</h2>
         <ul style={{textAlign: 'left'}}>
             <li><a href="https://metaltoad.github.io/galidus-team-widget" style={{color: '#000'}}>UI Storybook</a></li>
             <li><a href="https://github.com/metaltoad/galidus-team-widget/" style={{color: '#000'}}>Github Repo - Galidus Team Widget</a></li>
@@ -97,9 +97,9 @@ const TemplateVideoAndImage = args => <Carousel {...args}>
         contentMaxWidth="1000px"
         contentPadding="80px"
         height="500px"
-        image={null}
+        image="https://media.gettyimages.com/id/919446314/photo/usa-oregon-portland-city-view.jpg?s=2048x2048&w=gi&k=20&c=UuEjgzCmbBnZ75TnfitRFRuDNXRZjOzzqEyZoE5E4Kc="
         mode="dark"
-        readability={0.8}
+        readability={0.75}
         subtitle="Metal Toad is a leading AWS Consulting Partner focused on supporting customers in the Pacific Northwest. Our team includes experts certified in AWS machine learning, application development, architecture, migration, and DevOps — backed by 24x7 support. AWS cloud is powerful, we make it easy."
         subtitleColor="#fff"
         subtitleSize="19px"
